@@ -14,7 +14,7 @@ export const bundleSchema = z.object({
   title: LOCALE_REQUIRED_INPUT_SCHEMA,
   description: LOCALE_OPTIONAL_INPUT_SCHEMA,
   status: z.enum(["published", "unpublished"], {
-    required_error: "Status is required",
+    message: "Status is required",
   }),
   coverImage: z
     .object({
@@ -28,8 +28,8 @@ export const bundleSchema = z.object({
     .array(
       z.object({
         id: z.string(),
-        name: z.union([z.string(), z.record(z.string())]),
-      }),
+        name: z.union([z.string(), z.record(z.string(), z.string())]),
+      })
     )
     .min(1, "At least one product must be selected")
     .refine((products) => products && products.length > 0, {

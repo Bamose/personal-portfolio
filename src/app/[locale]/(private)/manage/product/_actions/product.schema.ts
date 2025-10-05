@@ -60,14 +60,14 @@ export const productSchema = z.object({
   color: z.array(z.string()).min(1, "At least one color is required"),
   size: z.string().min(1, "Size is required"),
   price: z.coerce
-    .number({ invalid_type_error: "Price must be a number" })
+    .number({ message: "Price must be a number" })
     .positive("Price must be greater than 0"),
   stock: z.coerce
-    .number({ invalid_type_error: "Stock must be a number" })
+    .number({ message: "Stock must be a number" })
     .int("Stock must be a whole number")
     .min(0, "Stock cannot be negative"),
   status: z.enum(["published", "unpublished"], {
-    required_error: "Status is required",
+    message: "Status is required",
   }),
   coverImage: z
     .object({
@@ -79,7 +79,7 @@ export const productSchema = z.object({
     .array(
       z.object({
         url: z.string(),
-      }),
+      })
     )
     .max(2, "Maximum 2 additional images allowed")
     .optional(),

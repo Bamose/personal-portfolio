@@ -28,48 +28,39 @@ export const discountSchema = z
     code: LOCALE_REQUIRED_INPUT_SCHEMA,
     description: LOCALE_OPTIONAL_INPUT_SCHEMA,
     type: z.enum(["percentage", "fixed"], {
-      required_error: "Discount type is required",
+      message: "Discount type is required",
     }),
     value: z.coerce
-      .number({ invalid_type_error: "Value must be a number" })
-      .positive("Value must be greater than 0")
-      .refine((val, ctx) => {
-        const type = ctx?.path?.[0];
-        if (type === "percentage" && val > 100) {
-          return false;
-        }
-        return true;
-      }, "Percentage cannot exceed 100"),
+      .number({ message: "Value must be a number" })
+      .positive("Value must be greater than 0"),
     status: z.enum(["active", "inactive", "expired"], {
-      required_error: "Status is required",
+      message: "Status is required",
     }),
     applicationType: z.enum(["all", "specific"], {
-      required_error: "Application type is required",
+      message: "Application type is required",
     }),
     products: z
       .array(
         z.object({
           id: z.string(),
-          name: z.union([z.string(), z.record(z.string())]),
-        }),
+          name: z.union([z.string(), z.record(z.string(), z.string())]),
+        })
       )
       .optional()
       .nullable(),
     startDate: z.coerce.date({
-      required_error: "Start date is required",
-      invalid_type_error: "Start date must be a valid date",
+      message: "Start date is required and must be a valid date",
     }),
     endDate: z.coerce.date({
-      required_error: "End date is required",
-      invalid_type_error: "End date must be a valid date",
+      message: "End date is required and must be a valid date",
     }),
     minPurchaseAmount: z.coerce
-      .number({ invalid_type_error: "Min purchase must be a number" })
+      .number({ message: "Min purchase must be a number" })
       .min(0, "Min purchase cannot be negative")
       .optional()
       .nullable(),
     maxUsageCount: z.coerce
-      .number({ invalid_type_error: "Max usage must be a number" })
+      .number({ message: "Max usage must be a number" })
       .int("Max usage must be a whole number")
       .min(1, "Max usage must be at least 1")
       .optional()
@@ -83,7 +74,7 @@ export const discountSchema = z
     {
       message: "End date must be after start date",
       path: ["endDate"],
-    },
+    }
   )
   .refine(
     (data) => {
@@ -95,7 +86,7 @@ export const discountSchema = z
     {
       message: "At least one product must be selected for specific discounts",
       path: ["products"],
-    },
+    }
   );
 
 export type DiscountFormData = z.infer<typeof discountSchema>;

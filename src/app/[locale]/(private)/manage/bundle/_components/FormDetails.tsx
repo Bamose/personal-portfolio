@@ -122,7 +122,7 @@ const BundleFormDetails: React.FC<FormDetailProps> = (props) => {
                 <ImageInput
                   label=""
                   className="w-full"
-                  aspectRatio="16:9"
+                  aspectRatio="video"
                   value={
                     coverFile ||
                     (bundle?.coverImage?.url ? bundle.coverImage.url : null)
