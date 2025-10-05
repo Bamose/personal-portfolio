@@ -24,16 +24,16 @@ export async function generateMetadata(props: {
   const params = await props.params;
   return {
     metadataBase: new URL(
-      process.env.NEXT_PUBLIC_APP_URL || "http://localhost:9898",
+      process.env.NEXT_PUBLIC_APP_URL || "http://localhost:9898"
     ),
     title: {
-      template: `%s | Vibe`,
-      default: "Vibe",
+      template: `%s | Habesha Bloom`,
+      default: "Habesha Bloom",
     },
-    description: "Vibe app description",
+    description: "Habesha Bloom app description",
     openGraph: {
-      title: "Vibe",
-      description: "Vibe app description",
+      title: "Habesha Bloom",
+      description: "Habesha Bloom app description",
       type: "website",
       locale: params.locale,
       images: [
