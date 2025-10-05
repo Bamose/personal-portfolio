@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@mantine/core";
+import { useRouter } from "@/i18n/routing";
 import { StarRating } from "./StarRating";
 import { SizeSelector } from "./SizeSelector";
 import { ColorSelector } from "./ColorSelector";
@@ -14,6 +15,12 @@ interface ProductInfoProps {
 
 export function ProductInfo({ product }: ProductInfoProps) {
   const [showBundleModal, setShowBundleModal] = useState(false);
+  const router = useRouter();
+
+  const handleBuyNow = () => {
+    // TODO: Add product to cart before redirecting
+    router.push("/cart");
+  };
 
   return (
     <>
@@ -44,30 +51,42 @@ export function ProductInfo({ product }: ProductInfoProps) {
 
         {product.colors && <ColorSelector colors={product.colors} />}
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col gap-4">
           <span className="text-3xl font-bold text-[#d6001c]">
             ETB {product.price.toFixed(2)}
           </span>
-          <Button
-            className="flex-1"
-            size="lg"
-            color="red"
-            radius="xl"
-            leftSection={
-              <svg
-                className="h-5 w-5"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <title>Shopping bag icon</title>
-                <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z" />
-              </svg>
-            }
-          >
-            Add to Cart
-          </Button>
+          <div className="flex gap-3">
+            <Button
+              className="flex-1"
+              size="lg"
+              color="red"
+              radius="xl"
+              leftSection={
+                <svg
+                  className="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <title>Shopping bag icon</title>
+                  <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z" />
+                </svg>
+              }
+            >
+              Add to Cart
+            </Button>
+            <Button
+              className="flex-1"
+              size="lg"
+              color="red"
+              variant="outline"
+              radius="xl"
+              onClick={handleBuyNow}
+            >
+              Buy Now
+            </Button>
+          </div>
         </div>
 
         <div className="border-t border-gray-200 pt-6">
