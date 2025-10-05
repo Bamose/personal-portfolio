@@ -26,7 +26,7 @@ export default function RootStyleRegistry({
   });
   return (
     <>
-      <ColorSchemeScript defaultColorScheme="dark" />
+      <ColorSchemeScript defaultColorScheme="light" />
       <MantineProvider theme={theme} defaultColorScheme="dark">
         <ProgressBar shallowRouting options={{ showSpinner: false }} />
         <Notifications />
@@ -108,7 +108,7 @@ const baseTheme = ({
         },
         styles: {
           root: {
-            backgroundColor: "#1f1f1f",
+            backgroundColor: "#ffffff",
           },
         },
       },
@@ -118,7 +118,7 @@ const baseTheme = ({
         },
         styles: {
           root: {
-            backgroundColor: "#1f1f1f",
+            backgroundColor: "#ffffff",
           },
         },
       },
@@ -128,7 +128,7 @@ const baseTheme = ({
         },
         styles: {
           input: {
-            backgroundColor,
+            backgroundColor: "#ffffff",
           },
         },
       },

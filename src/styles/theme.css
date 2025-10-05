@@ -1,14 +1,13 @@
 @reference "tailwindcss";
 
 :root {
-  --primary-color-default: #f25336;
-  --primary-color-text: #e2e8f0;
-  --primary-color-body: #111111;
-  --primary-color-background: #202020;
-  --primary-color-border: #464647;
-
+  --primary-color-default: #d6001c;
+  --primary-color-text: #000000;
+  --primary-color-body: #ffffff;
+  --primary-color-background: #ffffff;
+  --primary-color-border: #e2e8f0;
   --rem: 14px;
-  --body: #202020;
+  --body: #ffffff;
   --radius: 0.5rem;
   --mantine-font-family: var(--font-inter);
 }

@@ -12,7 +12,7 @@ function getClosestLightness(colorObject: chroma.Color) {
       Math.abs(curr - lightnessGoal) < Math.abs(prev - lightnessGoal)
         ? curr
         : prev,
-    LIGHTNESS_MAP[0]
+    LIGHTNESS_MAP[0],
   );
 }
 
@@ -45,12 +45,12 @@ export type MantineColorsTuple = readonly [
   string,
   string,
   string,
-  ...string[]
+  ...string[],
 ];
 
 export function generateColors(color: string) {
   return generateColorsMap(color).colors.map((c) =>
-    c.hex()
+    c.hex(),
   ) as unknown as MantineColorsTuple;
 }
 
@@ -78,7 +78,7 @@ function lightenColor(
   r: number,
   g: number,
   b: number,
-  percentage: number
+  percentage: number,
 ): { r: number; g: number; b: number } {
   const lightenValue = (component: number) =>
     Math.round(component + ((255 - component) * percentage) / 100);

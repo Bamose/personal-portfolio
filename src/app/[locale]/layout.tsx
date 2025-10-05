@@ -24,7 +24,7 @@ export async function generateMetadata(props: {
   const params = await props.params;
   return {
     metadataBase: new URL(
-      process.env.NEXT_PUBLIC_APP_URL || "http://localhost:9898"
+      process.env.NEXT_PUBLIC_APP_URL || "http://localhost:9898",
     ),
     title: {
       template: `%s | Vibe`,
@@ -67,8 +67,8 @@ export default async function LocaleLayout(props: Props) {
   const styles: Record<string, string> = {
     "--primary-color-default": defaultTheme,
     "--primary-radius": radius,
-    "--primary-color-background": "#121212",
-    backgroundColor: "#121212",
+    "--primary-color-background": "#ffffff",
+    backgroundColor: "#ffffff",
   };
 
   colorArray.forEach((color: string, index: number) => {
