@@ -27,7 +27,7 @@ export default function RootStyleRegistry({
   return (
     <>
       <ColorSchemeScript defaultColorScheme="light" />
-      <MantineProvider theme={theme} defaultColorScheme="dark">
+      <MantineProvider theme={theme} defaultColorScheme="light">
         <ProgressBar shallowRouting options={{ showSpinner: false }} />
         <Notifications />
         <ModalsProvider>{children}</ModalsProvider>
