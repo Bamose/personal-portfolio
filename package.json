@@ -9,7 +9,9 @@
     "lint": "biome check",
     "format": "biome format --write",
     "cf:build": "npx @cloudflare/next-on-pages@latest",
-    "cf:deploy": "wrangler pages deploy .vercel/output/static --functions .vercel/output/functions"
+    "cf:deploy": "wrangler pages deploy .vercel/output/static --functions .vercel/output/functions",
+    "worker:dev": "wrangler dev -c wrangler.worker.jsonc",
+    "worker:deploy": "wrangler deploy -c wrangler.worker.jsonc"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
