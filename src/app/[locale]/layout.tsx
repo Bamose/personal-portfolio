@@ -30,16 +30,18 @@ export async function generateMetadata(props: {
   const params = await props.params;
   return {
     metadataBase: new URL(
-      process.env.NEXT_PUBLIC_APP_URL || "http://localhost:9898"
+      process.env.NEXT_PUBLIC_APP_URL || "http://anellabekena.com"
     ),
     title: {
-      template: `%s | Habesha Bloom`,
-      default: "Habesha Bloom",
+      template: `%s | Anella Bekena`,
+      default: "Anella Bekena",
     },
-    description: "Habesha Bloom app description",
+    description:
+      "Full stack developer building scalable multi-tenant platforms on Next.js, Nest.js, and AWS.",
     openGraph: {
-      title: "Habesha Bloom",
-      description: "Habesha Bloom app description",
+      title: "Anella Bekena",
+      description:
+        "Full stack developer building scalable multi-tenant platforms on Next.js, Nest.js, and AWS.",
       type: "website",
       locale: params.locale,
       images: [
