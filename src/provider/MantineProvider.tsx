@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { generateColors } from "@mantine/colors-generator";
 import {
   ColorSchemeScript,
@@ -9,7 +8,7 @@ import {
 } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
 import { Notifications } from "@mantine/notifications";
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import React from "react";
 
 export default function RootStyleRegistry({
   color,
@@ -28,7 +27,6 @@ export default function RootStyleRegistry({
     <>
       <ColorSchemeScript defaultColorScheme="light" />
       <MantineProvider theme={theme} defaultColorScheme="light">
-        <ProgressBar shallowRouting options={{ showSpinner: false }} />
         <Notifications />
         <ModalsProvider>{children}</ModalsProvider>
       </MantineProvider>

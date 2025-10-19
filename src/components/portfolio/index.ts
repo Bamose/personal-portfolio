@@ -1,0 +1,11 @@
+export { Header } from "./Header";
+export { Navigation } from "./Navigation";
+export { SocialLinks } from "./SocialLinks";
+export { About } from "./About";
+export { Experience } from "./Experience";
+export { ExperienceItem } from "./ExperienceItem";
+export type { ExperienceItemProps } from "./ExperienceItem";
+export { Projects } from "./Projects";
+export { ProjectItem } from "./ProjectItem";
+export type { ProjectItemProps } from "./ProjectItem";
+export { Footer } from "./Footer";

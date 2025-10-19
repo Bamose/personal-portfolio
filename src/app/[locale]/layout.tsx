@@ -1,6 +1,6 @@
 import { ColorSchemeScript } from "@mantine/core";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -16,6 +16,12 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
 });
 
 export async function generateMetadata(props: {
@@ -84,7 +90,7 @@ export default async function LocaleLayout(props: Props) {
         <link rel="shortcut icon" href="/favicon.svg" />
       </head>
       <body
-        className={cn("h-screen w-full", inter.className)}
+        className={cn("h-screen w-full", inter.className, robotoMono.variable)}
         style={styles}
         suppressHydrationWarning={true}
       >
