@@ -7,7 +7,6 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { Footer } from "@/components/portfolio/Footer";
 import { portfolioData } from "@/data/portfolio";
-import Noise from "@/components/Noise";
 
 export default function Page() {
   const spotlightRef = useRef<HTMLDivElement>(null);
@@ -26,20 +25,6 @@ export default function Page() {
 
   return (
     <div className="bg-background-dark min-h-screen text-slate scroll-smooth relative">
-      {/* Animated Noise Background with Gradient */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <Noise patternAlpha={40} patternRefreshInterval={2} />
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 100%)",
-            mixBlendMode: "overlay",
-          }}
-        />
-      </div>
-
       <div
         ref={spotlightRef}
         className="fixed w-[1400px] h-[1400px] rounded-full pointer-events-none z-[5] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300"

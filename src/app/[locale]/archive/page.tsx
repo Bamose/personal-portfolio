@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 import { portfolioData } from "@/data/portfolio";
 import { TechTag } from "@/components/ui/TechTag";
 import { ExternalLinkIcon } from "@/components/ui/ExternalLinkIcon";
-import Noise from "@/components/Noise";
 
 type ArchiveItem = {
   year: number;
@@ -35,19 +34,6 @@ export default function ArchivePage() {
 
   return (
     <div className="bg-background-dark min-h-screen text-slate scroll-smooth relative">
-      {/* Animated Noise Background with Gradient */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <Noise patternAlpha={40} patternRefreshInterval={2} />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 100%)",
-            mixBlendMode: "overlay",
-          }}
-        />
-      </div>
-
       {/* Spotlight following the cursor */}
       <div
         ref={spotlightRef}
