@@ -66,8 +66,8 @@ export const portfolioData = {
         technologies: ["Node.js", "NestJS", "Atlassian", "Confluence"],
       },
     ] as ExperienceItemProps[],
-    // Relative path so it resolves under the current locale, e.g. /en/resume
-    resumeLink: "resume",
+    resumeLink:
+      "https://drive.google.com/file/d/1zq0B8jQh9nukwhQ2OrNU-J5WXWzWszp7/view?usp=sharing",
   },
 
   projects: {
