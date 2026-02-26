@@ -21,6 +21,23 @@ export const portfolioData = {
   experience: {
     items: [
       {
+        period: "Sep 2023 — Present",
+        periodAria: "September 2023 to Present",
+        title: "Full Stack Developer",
+        company: "Muyalogy (Jiret / M4 Health)",
+        companyUrl: "https://www.muyalogy.com",
+        description:
+          "Build SaaS multi‑tenant LMS features with Next.js and Nest.js using Server Actions, webhooks, and Drizzle; design modules with product teams; implement S3 file management, Mux uploads, Vercel Blob images; deliver e‑commerce, analytics dashboards, and AI‑powered features.",
+        technologies: [
+          "Next.js",
+          "Nest.js",
+          "Drizzle ORM",
+          "AWS S3",
+          "Mux",
+          "Vercel Blob",
+        ],
+      },
+      {
         period: "Mar 2025 — Present",
         periodAria: "March 2025 to Present",
         title:
@@ -36,23 +53,6 @@ export const portfolioData = {
           "PostgreSQL",
           "TypeScript",
           "RBAC",
-        ],
-      },
-      {
-        period: "Sep 2023 — Present",
-        periodAria: "September 2023 to Present",
-        title: "Full Stack Developer",
-        company: "Muyalogy (Jiret / M4 Health)",
-        companyUrl: "https://www.muyalogy.com",
-        description:
-          "Build SaaS multi‑tenant LMS features with Next.js and Nest.js using Server Actions, webhooks, and Drizzle; design modules with product teams; implement S3 file management, Mux uploads, Vercel Blob images; deliver e‑commerce, analytics dashboards, and AI‑powered features.",
-        technologies: [
-          "Next.js",
-          "Nest.js",
-          "Drizzle ORM",
-          "AWS S3",
-          "Mux",
-          "Vercel Blob",
         ],
       },
       {
@@ -72,6 +72,20 @@ export const portfolioData = {
 
   projects: {
     items: [
+      {
+        title: "RedatAI",
+        description:
+          "AI assistant platform in Ethiopia that works over SMS with no app or internet required, backed by a multilingual web experience, Hono API, and Expo mobile gateway.",
+        technologies: [
+          "Next.js",
+          "Hono",
+          "Cloudflare Workers",
+          "Expo",
+          "React Native",
+          "TypeScript",
+        ],
+        projectUrl: "https://redatai.et/",
+      },
       {
         title: "Ongize",
         description:
@@ -111,6 +125,36 @@ export const portfolioData = {
     archiveLink: "/archive",
     archive: {
       items: [
+        {
+          year: 2025,
+          title: "RedatAI",
+          madeAt: "Muyalogy",
+          builtWith: [
+            "Next.js",
+            "Hono",
+            "Cloudflare Workers",
+            "Expo",
+            "React Native",
+            "TypeScript",
+          ],
+          linkUrl: "https://redatai.et/",
+          linkLabel: "redatai.et",
+        },
+        {
+          year: 2025,
+          title: "Lebiro",
+          madeAt: "Lebiro",
+          builtWith: [
+            "Next.js",
+            "Hono",
+            "Cloudflare Workers",
+            "Drizzle ORM",
+            "PostgreSQL",
+            "next-intl",
+          ],
+          linkUrl: "https://lebiro.et/",
+          linkLabel: "lebiro.et",
+        },
         {
           year: 2025,
           title: "Ongize",
